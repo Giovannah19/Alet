@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Odonto Form</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="..\css\style.css">
+		<link rel="stylesheet" href="..\css\style_form.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="javascript/functions.js"></script>
+	</head>
+	<body>
+			<header class="header" id="cabecalho">
+  					<a href="/" class="logo"> <img src="..\img\logo.png" alt="Logo da Fodon"></a>
+  				<div class="header-right">
+   		 			<a href="/">Home</a>
+    				<a class="active" href="triagem">Triagem</a>
+    				<a href="sobre">Sobre</a>
+    				<a href="#" style="font-size:30px;" class="icon" onclick="myFunction()">&#9776;</a>
+  				</div>
+			</header>
+
+		<div class="container">
+		  <form action="/triagem" method="post">
+		    <div class="row">
+		      <div class="col-25">
+		        <label for="name">Nome:</label>
+		      </div>
+		      <div class="col-75">
+		        <input required oninvalid="setCustomValidity('INFORME O NOME COMPLETO')" oninput="setCustomValidity('')" pattern="[a-zA-Z\s]+$" type="text" id="name" name="nome" placeholder="Nome completo do paciente">
+		      </div>
+		    </div>
+		    <div class="row">
+		      <div class="col-25">
+		        <label for="cpf">CPF:</label>
+		      </div>
+		      <div class="col-75">
+		        <input required oninvalid="setCustomValidity('INFORME O CPF!')" oninput="setCustomValidity('')" pattern="[0-9]+$" type="text" id="cpf" name="cpf" placeholder="Informe o CPF do paciente sem traços ou pontos">
+		      </div>
+		    </div>
+		    <div class="row">
+		      <div class="col-25">
+		        <label for="dt_nasc">Data de Nascimento</label>
+		      </div>
+		      <div class="col-75">
+		        <input required oninvalid="setCustomValidity('INFORME A DATA DE NASCIMENTO')" oninput="setCustomValidity('')" type="date" id="dt_nasc" name="dt_nasc"  min="2017-04-01" max="2019-04-30">
+		      </div>
+		    </div>
+		     <div class="row">
+		      <div class="col-25">
+		        <label for="email">Email</label>
+		      </div>
+		      <div class="col-75">
+		        <input required oninvalid="setCustomValidity('INFORME O EMAIL')" oninput="setCustomValidity('')" type="email" id="email" name="email"  placeholder="Email do Paciente: exemplo@gmail.com">
+		      </div>
+		    </div>
+		    <div class="row">
+		      <div class="col-25">
+		        <label for="sexo">Sexo:</label>
+		      </div>
+		      <div class="col-75">
+		        <select required oninvalid="setCustomValidity('SELECIONE UMA OPÇÃO')" oninput="setCustomValidity('')"id="sexo" name="sexo">
+		          <option value="">Selecionar</option>
+		          <option value="feminino">Feminino</option>
+		          <option value="masculino">Masculino</option>
+		          <option value="outro">Outro</option>
+		        </select>
+		      </div>
+		    </div>
+		    <div class="row">
+		      <div class="col-25">
+		        <label for="sintomas">Sintomas:</label>
+		      </div>
+		      <div class="col-75">
+		        <textarea required oninvalid="setCustomValidity('PREENCHIMENTO OBRIGATÓRIO!')" oninput="setCustomValidity('')" id="sintomas" name="sintomas" placeholder="Descreva aqui os sintomas apresentados pelo paciente." style="height:200px"></textarea>
+		      </div>
+		    </div>
+		    <div class="row">
+		      <input type="submit" value="Enviar">
+		    </div>
+		  </form>
+		</div>
+	</body>
+</html>
