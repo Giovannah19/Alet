@@ -14,8 +14,12 @@ app.get("/triagem", function(req,res){
 	res.sendFile(__dirname + "/html/triagem.html")
 });
 
+app.get("/ocorrencias", function(req,res){
+  res.sendFile(__dirname + "/html/ocorrencias.html")
+});
+
 //seta os dados no banco
-app.post("/triagem", function(req,res){
+/*app.post("/triagem", function(req,res){
    triagem.create({
     nome: req.body.nome,
     cpf: req.body.cpf,
@@ -27,7 +31,7 @@ app.post("/triagem", function(req,res){
   }).catch(function(erro){
     res.send("Erro ao enviar os dados" + erro)
   })
-});
+});*/
 
  
 app.listen(3000, function(){

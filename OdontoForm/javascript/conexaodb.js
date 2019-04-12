@@ -1,6 +1,6 @@
 // Realiza a conexão com o banco de dados ('tipoDeBanco://user:senha@host:porta/database')
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('mysql://D5EYPCG5Du:cRawXRJKYj@remotemysql.com:3306/D5EYPCG5Du');
+const sequelize = new Sequelize('mysql://33uRoApLH8:ktJXvfs0EQ@remotemysql.com:3306/33uRoApLH8');
 
 // Confirmação de autenticação
 	sequelize.authenticate()
@@ -21,8 +21,8 @@ const sequelize = new Sequelize('mysql://D5EYPCG5Du:cRawXRJKYj@remotemysql.com:3
 		cpf:{
 			type: Sequelize.INTEGER(14)
 		},
-		data-nasc:{
-			type: Sequelize.DATE(6)
+		datanasc:{
+			type: Sequelize.DATE
 		},
 		email:{
 			type: Sequelize.STRING(40)
@@ -38,8 +38,8 @@ const sequelize = new Sequelize('mysql://D5EYPCG5Du:cRawXRJKYj@remotemysql.com:3
 //exporta para ser usado em outros arquivos
 module.exports = triagem
 	
-	/*Executa a criação da tabela, usar 1 vez apenas:
+	/*Executa a criação da tabela, usar 1 vez apenas:*/
 
-	triagem.sync({force: true});*/
+	triagem.sync({force: true});
 
 	
