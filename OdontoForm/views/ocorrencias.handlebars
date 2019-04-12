@@ -1,0 +1,40 @@
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+	<head> -->
+		<title>Odonto Form</title>
+		<!-- <meta charset="utf-8">
+		<link rel="stylesheet" href="..\css\style.css">
+		<link rel="stylesheet" href="..\css\style_form.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="javascript/functions.js"></script>
+	</head>
+	<body> -->
+			<header class="header" id="cabecalho">
+  					<a href="/" class="logo"> <img src="..\img\logo.png" alt="Logo da Fodon"></a>
+  				<div class="header-right">
+   		 			<a href="/">Home</a>
+    				<a href="triagem">Triagem</a>
+    				<a class="active" href="ocorrencias">Ocorrências</a>
+    				<a href="#" style="font-size:30px;" class="icon" onclick="myFunction()">&#9776;</a>
+  				</div>
+			</header>
+
+			<div>
+				{{#each fichas}}
+          <p>
+           	Nome: {{nome}} --
+           	CPF: {{cpf}} --
+            Data de nascimento: {{dt_nasc}} --
+            Email: {{email}} --
+            Sexo: {{sexo}} --
+            Sintomas:{{sintomas}} --
+          </p>
+          <a href="/deletar/{{id}}"><button>Deletar</button></a>
+          <a href="/editar/{{id}}"><button>Editar</button></a>
+        {{/each}}
+			</div>
+
+		<div class="container">
+		</div>
+	<!-- </body>
+</html> -->

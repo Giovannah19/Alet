@@ -1,6 +1,6 @@
 // Realiza a conexão com o banco de dados ('tipoDeBanco://user:senha@host:porta/database')
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('mysql://33uRoApLH8:ktJXvfs0EQ@remotemysql.com:3306/33uRoApLH8');
+const sequelize = new Sequelize('mysql://ltg1uis3vC:uIcXWyU22C@remotemysql.com:3306/ltg1uis3vC');
 
 // Confirmação de autenticação
 	sequelize.authenticate()
@@ -10,36 +10,12 @@ const sequelize = new Sequelize('mysql://33uRoApLH8:ktJXvfs0EQ@remotemysql.com:3
 	.catch(err=> {
 		console.error("Falha ao se conectar", err);
 	});
+ 
+ //exporta para ser usado em outros arquivos
+module.exports = {
+	Sequelize: Sequelize,
+	sequelize: sequelize
+}
 	
-
-//Create table na 1° vez pelo sequelize e depois serve para inserir na tabela: 
-	
-	const triagem = sequelize.define('triagem', {
-		nome: {
-			type: Sequelize.STRING(40)
-		},
-		cpf:{
-			type: Sequelize.INTEGER(14)
-		},
-		datanasc:{
-			type: Sequelize.DATE
-		},
-		email:{
-			type: Sequelize.STRING(40)
-		},
-		sexo:{
-			type: Sequelize.BOOLEAN(1)
-		},
-		sintomas:{
-			type: Sequelize.STRING(100)
-		}
-	});
-
-//exporta para ser usado em outros arquivos
-module.exports = triagem
-	
-	/*Executa a criação da tabela, usar 1 vez apenas:*/
-
-	triagem.sync({force: true});
 
 	
