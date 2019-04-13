@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const router = express.Router()
+const path = require('path')
+__dirname = path.resolve();
 const bodyParser = require('body-parser')
 const handlebars = require('express-handlebars')
 const Triagem = require('./javascript/Triagem')
@@ -13,7 +15,7 @@ app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-// app.use(express.static(path.join(__dirname + '/')));
+app.use(express.static(path.join(__dirname + '/')));
 
 //leva para a pagina da home
 app.get("/" , function(req,res){
@@ -56,13 +58,6 @@ app.get('/deletar/:id',function(req,res){
   })
 })
 
-app.get('/editar/:id',function(req,res){
-  Triagem.update({where:{'id':req.params.id}}).then(function(){
-    res.send("Ficha alterada !")
-  }).catch(function(erro){
-    res.send("Erro a encontrar a ficha" + erro)
-  })
-})
 app.listen(3000, function(){
 	console.log("Servidor Rodando!")
 });

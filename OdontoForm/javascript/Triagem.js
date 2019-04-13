@@ -26,4 +26,4 @@ const Triagem = triagem.sequelize.define('triagem', {
 
 module.exports = Triagem;
 
-	/*Executa a criação da tabela, usar 1 vez apenas: triagem.sync({force: true});*/
+/*Executa a criação da tabela, usar 1 vez apenas: Triagem.sync({force: true});*/

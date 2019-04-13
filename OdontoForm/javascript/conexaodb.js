@@ -1,6 +1,6 @@
 // Realiza a conexão com o banco de dados ('tipoDeBanco://user:senha@host:porta/database')
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('mysql://ltg1uis3vC:uIcXWyU22C@remotemysql.com:3306/ltg1uis3vC');
+const sequelize = new Sequelize('mysql://ixWoNIfsdD:67a1DcT0A6@remotemysql.com:3306/ixWoNIfsdD');
 
 // Confirmação de autenticação
 	sequelize.authenticate()
